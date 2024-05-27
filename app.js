@@ -11,7 +11,20 @@ async function initApp() {
   displayTeachersGrid(teachers);
 }
 
-async function getTeachers() {}
+async function getTeachers() {
+  const teachersGrid = document-querySelector ("#teachers-grid");
+
+for (const teacher of teachers) {
+teachersGrid. insertAdjacentHTML(
+"beforeend",
+/*html*/`
+<article class="grid-item">
+<img src="${teacher.acf.image}" alt="${teacher.acf-name}" />
+<h2>${teacher.acf.name}</h2>
+<p>${teacher.acf.title}</p>
+<a href="mailto:${teacher.acf.mail}">${teacher.acf.mail}</a>
+</article>
+}
 
 function displayTeachers(teachers) {
   console.log(teachers);
